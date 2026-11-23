@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Waad Ahmed - Product Portfolio</title>
+<style>
+:root{
+  --ink:#171a1f; --muted:#5b6370; --line:#e4e6ea; --bg:#fbfbfa; --card:#ffffff;
+  --accent:#9a3b2f; --accent-soft:#f3e4e0;
+  --serif: "Iowan Old Style","Palatino Linotype",Georgia,serif;
+  --sans: -apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.55}
+.wrap{max-width:760px;margin:0 auto;padding:0 28px}
+
+header.hero{padding:88px 0 56px;border-bottom:1px solid var(--line)}
+header.hero .eyebrow{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:14px}
+header.hero h1{font-family:var(--serif);font-size:clamp(34px,6vw,52px);line-height:1.08;margin:0 0 18px;letter-spacing:-0.01em}
+header.hero p{font-size:17px;color:var(--muted);max-width:560px;margin:0}
+nav.jump{display:flex;gap:22px;margin-top:28px;font-size:14px}
+nav.jump a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:2px}
+nav.jump a:hover{border-color:var(--accent);color:var(--accent)}
+
+section{padding:52px 0;border-bottom:1px solid var(--line)}
+section:last-of-type{border-bottom:none}
+section h2{font-family:var(--serif);font-size:26px;margin:0 0 18px}
+section.about p{color:var(--muted);font-size:16px;max-width:620px}
+
+.case{margin-bottom:8px}
+.case .meta{display:flex;gap:10px;align-items:center;margin-bottom:10px}
+.case .tag{font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--accent);font-weight:600}
+.case h3{font-family:var(--serif);font-size:22px;margin:0 0 14px}
+.case .block{margin-bottom:16px}
+.case .block h4{font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:0 0 6px;font-weight:600}
+.case .block p, .case .block li{font-size:15px;color:#2a2e35}
+.case .block ul{margin:0;padding-left:20px}
+.case + .case{margin-top:48px;padding-top:40px;border-top:1px solid var(--line)}
+
+.skills ul{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr 1fr;gap:10px 24px}
+.skills li{font-size:15px;padding-left:16px;position:relative}
+.skills li::before{content:"";position:absolute;left:0;top:9px;width:6px;height:6px;background:var(--accent);border-radius:50%}
+
+.coming-soon{border:1px dashed var(--line);border-radius:10px;padding:18px 20px;color:var(--muted);font-size:14px;background:var(--card)}
+
+footer{padding:48px 0 80px}
+footer p{color:var(--muted);font-size:14px}
+footer a{color:var(--accent);text-decoration:none;font-weight:600}
+footer a:hover{text-decoration:underline}
+
+@media (max-width:600px){
+  header.hero{padding:56px 0 40px}
+  section{padding:40px 0}
+  .skills ul{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Portfolio</div>
+    <h1>Waad Ahmed</h1>
+    <p>Moving from client-facing program and proposal work into product management. These case studies show how I scope an ambiguous request into a working solution.</p>
+    <nav class="jump">
+      <a href="#dental">Dental Clinic MVP</a>
+      <a href="#rfp">Wellbeing Program Proposal</a>
+      <a href="#skills">Skills</a>
+    </nav>
+  </div>
+</header>
+
+<section class="about wrap">
+  <h2>About</h2>
+  <p>My background is in client-facing program design: scoping needs, writing proposals, and coordinating delivery for institutional wellbeing programs. I'm moving that same skill - translating a vague, real-world ask into something structured and buildable - into product management. The two case studies below are both real pieces of work, built end to end.</p>
+</section>
+
+<section id="dental" class="wrap">
+  <div class="case">
+    <div class="meta"><span class="tag">Case Study</span></div>
+    <h3>Dental Clinic Management MVP</h3>
+
+    <div class="block">
+      <h4>The ask</h4>
+      <p>A stakeholder wanted "dental clinic management software" - shared patient data, appointment scheduling, reminders, and help with clinical decision-making. No further detail. That's a brief wide enough to become a year-long build if left unscoped.</p>
+    </div>
+
+    <div class="block">
+      <h4>Scoping decisions</h4>
+      <ul>
+        <li>Confirmed this was a prototype to validate the idea, not a production system - changes everything about how much rigor to build in up front.</li>
+        <li>Chose a browser-based tool for clinic staff over a native app, for fastest iteration.</li>
+        <li>Narrowed "clinical decision-making help" to rule-based alerts (allergy and drug-interaction flags, protocol checklists) instead of AI-generated diagnosis - lower risk, and still demonstrates the core value.</li>
+        <li>Kept it staff-only with automated outbound reminders, rather than building a full patient self-service portal that wasn't asked for.</li>
+      </ul>
+    </div>
+
+    <div class="block">
+      <h4>What shipped</h4>
+      <p>A working web app: shared patient records across logged-in staff, an appointment scheduler, and a live clinical-alert engine - selecting a patient and a procedure together surfaces real-time warnings (for example, a penicillin allergy flagged against a procedure that typically uses amoxicillin) plus a step-by-step protocol checklist for that procedure. A reminders dashboard tracks which upcoming appointments are due a reminder and logs what would be sent.</p>
+    </div>
+
+    <div class="block">
+      <h4>What's next</h4>
+      <p>Documented explicitly what a production version still needs: real authentication, encryption at rest, a compliance review for health data, audit logging, a real SMS/WhatsApp integration in place of the mock, and clinical sign-off on the alert rules from a licensed dentist before they influence real care.</p>
+    </div>
+  </div>
+
+  <div class="case" id="rfp">
+    <div class="meta"><span class="tag">Case Study</span></div>
+    <h3>Institutional Wellbeing Program - RFP Response</h3>
+
+    <div class="block">
+      <h4>The ask</h4>
+      <p>Respond to a formal RFP for a two-year institutional mental and emotional wellbeing program, issued by a large employer to competing service providers. The brief was bilingual, dense, and mandated an exact 20-section submission order - proposals that didn't match the structure, or that asserted a methodology without naming it, were explicitly first to be eliminated.</p>
+    </div>
+
+    <div class="block">
+      <h4>Approach</h4>
+      <ul>
+        <li>Parsed the RFP's mandated structure precisely and built the proposal section-by-section in that exact order, rather than a generic pitch deck.</li>
+        <li>Grounded every scientific or methodological claim in real, cited sources - WHO's workplace mental health guidelines, the ISO 45003 psychosocial risk standard, published burnout and psychological-safety research, and actual employee-assistance-program ROI studies - instead of vague "evidence-based" language with nothing behind it.</li>
+        <li>Clearly separated what could be answered with methodology and public evidence from what genuinely required the bidding organization's own data (team credentials, pricing, past client references) - flagged explicitly rather than invented, since a reviewer checking a bid against reality catches fabricated specifics immediately.</li>
+      </ul>
+    </div>
+
+    <div class="block">
+      <h4>Outcome</h4>
+      <p>A complete, properly structured, defensible proposal draft - every required section present, every scientific claim sourced, and a clear checklist of exactly what the bidding organization needed to fill in before submission.</p>
+    </div>
+  </div>
+
+  <div class="case">
+    <div class="meta"><span class="tag">Case Study</span></div>
+    <h3>Third project</h3>
+    <div class="coming-soon">Coming soon.</div>
+  </div>
+</section>
+
+<section id="skills" class="wrap skills">
+  <h2>Skills</h2>
+  <ul>
+    <li>Scoping ambiguous requests into buildable briefs</li>
+    <li>Requirements translation (business &rarr; technical)</li>
+    <li>Stakeholder-facing proposal and documentation writing</li>
+    <li>Directing rapid prototyping to a working demo</li>
+    <li>Evidence-based decision making, source-grounded claims</li>
+    <li>Risk-aware scoping (what ships now vs. what production needs)</li>
+  </ul>
+</section>
+
+<footer class="wrap">
+  <p>Get in touch: <a href="mailto:you@example.com">you@example.com</a> &middot; replace with your real contact before sharing this page.</p>
+</footer>
+
+</body>
+</html>
